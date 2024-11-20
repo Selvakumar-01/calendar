@@ -70,7 +70,7 @@ export default function App() {
           dataSource: data,
         }}
         selectedDate={new Date(2024, 10, 21)}
-        currentView='Month'
+        currentView='Week'
         popupOpen={(args) => {
           if (args.type === 'EventContainer') {
             args.element.innerHTML = `
