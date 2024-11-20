@@ -11,25 +11,58 @@ registerLicense(
 const data = [
   {
     Id: 1,
-    Subject: "Sales Presentation",
-    StartTime: new Date(2025, 1, 11, 10, 0),
-    EndTime: new Date(2025, 1, 11, 12, 30),
-    IsAllDay: false
+    Subject: "React Developer",
+    StartTime: new Date(2024, 10, 18, 9, 0),
+    EndTime: new Date(2024, 10, 18, 9, 30),
+    IsAllDay: false,
+    Description: "Interviewer - Geetha"
   },
   {
     Id: 2,
-    Subject: "New Budget Report",
-    StartTime: new Date(2024, 1, 11, 10, 0),
-    EndTime: new Date(2024, 1, 11, 12, 30),
-    IsAllDay: true,
-    Status: "Completed",
-    Priority: "High",
-  }
+    Subject: "React Developer",
+    StartTime: new Date(2024, 10, 19, 12, 0),
+    EndTime: new Date(2024, 10, 19, 12, 30),
+    IsAllDay: false,
+    Description: "Interviewer - Geetha"
+
+  },
+  {
+    Id: 3,
+    Subject: "React Developer",
+    StartTime: new Date(2024, 10, 20, 11, 0),
+    EndTime: new Date(2024, 10, 20, 11, 30),
+    IsAllDay: false,
+    Description: "Interviewer - Geetha"
+  },
+  {
+    Id: 4,
+    Subject: "React Developer",
+    StartTime: new Date(2024, 10, 21, 12, 0),
+    EndTime: new Date(2024, 10, 21, 12, 30),
+    IsAllDay: false,
+    Description: "Interviewer - Geetha"
+  },
+  {
+    Id: 5,
+    Subject: "React Developer",
+    StartTime: new Date(2024, 10, 21, 10, 0),
+    EndTime: new Date(2024, 10, 21, 10, 30),
+    IsAllDay: false,
+    Description: "Interviewer - Geetha"
+  },
+  {
+    Id: 6,
+    Subject: "React Developer",
+    StartTime: new Date(2024, 10, 22, 9, 0),
+    EndTime: new Date(2024, 10, 22, 9, 30),
+    IsAllDay: false,
+    Description: "Interviewer - Geetha"
+  },
 ]
 
 export default function App() {
   return (
-    <main style={{ display:'flex', justifyContent:'center', alignContent:'center', marginTop:100 }}>
+    <main style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', marginTop: 100 }}>
       <ScheduleComponent
         width={800}
         height={500}
@@ -38,6 +71,17 @@ export default function App() {
         }}
         selectedDate={new Date(2024, 1, 11)}
         currentView='Month'
+        popupOpen={(args) => {
+          if (args.type === 'EventContainer') {
+            args.element.innerHTML = `
+              <div>
+                <h3>${args.data.Subject}</h3>
+                <p>${args.data.Description}</p>
+              </div>
+            `;
+          }
+        }}
+
       >
         <ViewsDirective>
           <ViewDirective option="Day" />
