@@ -69,7 +69,7 @@ export default function App() {
         eventSettings={{
           dataSource: data,
         }}
-        selectedDate={new Date(2024, 1, 11)}
+        selectedDate={new Date(2024, 10, 21)}
         currentView='Month'
         popupOpen={(args) => {
           if (args.type === 'EventContainer') {
